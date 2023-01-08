@@ -1,8 +1,4 @@
----
-output:
-  html_document:
-    theme: readable
-    highlight: pygments
+
 ---
 # My Showcase Project Website
 
