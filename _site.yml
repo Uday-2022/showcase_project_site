@@ -4,4 +4,22 @@ navbar:
   title: "My showcase project Website"
   left:
     - text: "Home"
+      icon: fa-home
       href: index.html
+    - text: "About"
+      icon: fa-info
+      href: about.html
+    - text: "Macroeconomics"
+      icon: fa-gear
+      menu:
+        - text: "GDP and It's Components"
+        - href: gdp&components.html
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    theme: readable
+    highlight: pygments
+    include:
+      after_body: footer.html
+    css: styles.css
