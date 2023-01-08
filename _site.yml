@@ -13,7 +13,7 @@ navbar:
       icon: fa-gear
       menu:
         - text: "GDP and It's Components"
-        - href: gdp&components.html
+        - href: gdp-components.html
 output:
   html_document:
     toc: true
