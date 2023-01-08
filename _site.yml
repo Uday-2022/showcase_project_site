@@ -1,0 +1,7 @@
+name: "my-showcase-project-website"
+output_dir: "."
+navbar:
+  title: "My showcase project Website"
+  left:
+    - text: "Home"
+      href: index.html
