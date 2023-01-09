@@ -2,6 +2,7 @@
 title: "Introduction"
 ---
 
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(
 	echo = FALSE,
@@ -25,7 +26,7 @@ International Trade play an important role in circular economy at a macroeconomi
 
 
 ### Fig 1. Macroeconomics Circular Flow of Income
-```{r circular_flow_income_chart}
+```{r circular_flow_income_chart, echo=FALSE}
 knitr::include_graphics("C:/Users/91981/Desktop/Uday/Personal_analysis_projects/Git_projects/R_projects/R_Projects/Circular Economy Flow Chart.png")
 ```
 
