@@ -6,9 +6,9 @@
 
 Hello Friends!!!
 
-This is my **Showcase Project Website** where i will play around *Economics*, *Macroeconomics*, *Econometrics*, *Statistics*, *Mathematics*, *Analysis*, *Data Science* and much more.
+This is my **Showcase Project Website** where i will play around *Economics*, *Macroeconomics*, *Econometrics*, *Statistics*, *Mathematics*, *Analysis*, *Data Science* and many other topics.
 
 To do so, i will be using R, Rmarkdown, Python, Stata, QGIS and other tools with subject knowledge and industry & Economics knowledge.
 
-I hope this will help somehow to the community, industry, and our Country.
+I hope this will help somehow to the community, industry, and our Country's development.
 
