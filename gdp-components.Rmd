@@ -27,7 +27,7 @@ International Trade play an important role in circular economy at a macroeconomi
 
 ### Fig 1. Macroeconomics Circular Flow of Income
 ```{r circular_flow_income_chart, echo=FALSE}
-knitr::include_graphics("C:/Users/91981/Desktop/Uday/Personal_analysis_projects/Git_projects/R_projects/R_Projects/Circular Economy Flow Chart.png")
+knitr::include_graphics("C:/Users/91981/Desktop/Uday/Personal_analysis_projects/Git_projects/R_projects/R_Projects/Circular Economy Flow Chart.PNG")
 ```
 
 As you can see all the leakages and injections in the **table 1** below,
