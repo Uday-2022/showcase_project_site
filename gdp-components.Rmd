@@ -53,6 +53,6 @@ GDP and its components are nothing but the part of **Circular Flow of Income**.
 
 
 ```{r graph_1}
-source("C:/Users/91981/Desktop/Uday/Personal_analysis_projects/Git_projects/R_projects/R_Projects/R_GDP_component_growth_graph_1.R")
+source("R_GDP_component_growth_graph_1.R")
 ```
 
