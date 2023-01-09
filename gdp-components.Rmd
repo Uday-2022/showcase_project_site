@@ -13,7 +13,7 @@ knitr::opts_chunk$set(
 
 ```{r libraries_needed}
 
-pacman::p_load(pacman,party, rio, tidyverse,tinytex )
+pacman::p_load(pacman,party, rio, tidyverse,tinytex, namer )
 
 
 ```
@@ -25,7 +25,7 @@ pacman::p_load(pacman,party, rio, tidyverse,tinytex )
 International Trade play an important role in circular economy at a macroeconomic perspective. It is because of the reason that any activity that makes money out of the general circular flow (Household to business sector) is known as Leakage like tax, import, savings. On the other side, any activity that makes money into the general circular flow (Household to business sector) is known as injection like Government spending, export, investment.
 
 
-### Fig 1. Macroeconomics Circular Flow of Income
+#### Fig 1. Macroeconomics Circular Flow of Income
 ```{r circular_flow_income_chart, echo=FALSE}
 knitr::include_graphics("C:/Users/91981/Desktop/Uday/Personal_analysis_projects/Git_projects/R_projects/R_Projects/Circular Economy Flow Chart.PNG")
 ```
@@ -50,3 +50,9 @@ Here, if government wants to increase taxes to reduce their budget deficit then 
 ## GDP and It's Components
 
 GDP and its components are nothing but the part of **Circular Flow of Income**.
+
+
+```{r graph_1}
+source("C:/Users/91981/Desktop/Uday/Personal_analysis_projects/Git_projects/R_projects/R_Projects/R_GDP_component_growth_graph_1.R")
+```
+
