@@ -52,7 +52,87 @@ Here, if government wants to increase taxes to reduce their budget deficit then 
 GDP and its components are nothing but the part of **Circular Flow of Income**.
 
 
+```{r data}
+#if (!require("pacman")) install.packages("pacman")
+
+#load pre installed package
+#library(tidyverse, rio)
+#pacman::p_load(pacman,party, rio, tidyverse)
+
+#import GDP and its components excel file using rio package function import
+df_constant <- import("C:/Users/91981/Desktop/Uday/Personal_analysis_projects/Git_projects/RBI_GDP_Componets_Market_Price_yearly.xlsx")%>%
+  as.data.frame()%>%
+  select(Year_FY, GDP_market_prices_constant,
+         Private_final_consumption_expenditure_constant, Government_final_consumption_expenditure_constant,
+         Gross_fixed_capital_formation_constant, Changes_in_stocks_constant, Valuables_constant,
+         Exports_Goods_and_Services_constant, Import_Goods_and_Services_constant, Discrepancies_constant)%>%
+  mutate(
+    Net_Exports_constant = Exports_Goods_and_Services_constant - Import_Goods_and_Services_constant,
+    Investment_constant  = Gross_fixed_capital_formation_constant + Changes_in_stocks_constant)%>%
+  print()
+
+#df_constant_2015 <- df_constant[1:65,]
+#print(df_constant_2015)
+#summary(df_constant_2015)
+
+
+```
+
+
+
+```{r growth}
+#colnames(df_constant)
+
+df_constant_growth <- df_constant%>%
+  mutate(GDP_market_prices_constant_growth_rate = (GDP_market_prices_constant - lag(GDP_market_prices_constant))/lag(GDP_market_prices_constant)*100,
+         Private_final_consumption_expenditure_constant_growth_rate = (Private_final_consumption_expenditure_constant-lag(Private_final_consumption_expenditure_constant))/lag(Private_final_consumption_expenditure_constant)*100,
+         Investment_constant_growth_rate = (Investment_constant - lag(Investment_constant))/lag(Investment_constant)*100,
+         Government_final_consumption_expenditure_constant_growth_rate = (Government_final_consumption_expenditure_constant -lag(Government_final_consumption_expenditure_constant))/lag(Government_final_consumption_expenditure_constant)*100,
+         Net_Exports_constant_growth_rate = (Net_Exports_constant - lag(Net_Exports_constant))/lag(Net_Exports_constant)*100)
+
+print(df_constant_growth)
+```
+
+
 ```{r graph_1}
-source("R_GDP_component_growth_graph_1.R")
+
+
+options(scipen = 100, digits = 4)
+
+plot(
+  df_constant_growth$Year_FY,
+  df_constant_growth$GDP_market_prices_constant_growth_rate,
+  main = "GDP (Constant) growth rate  (in %)",
+  sub  = "(Source: RBI)",
+  xlab = "Year",
+  ylab = "GDP Growth Rate (in %)",
+  #pch="o",
+  #lty=1
+)
+
+
+lines(df_constant_growth$Year_FY,
+      df_constant_growth$GDP_market_prices_constant_growth_rate, col = 'darkgreen')
+
+
+#df_constant_growth$Year_FY[df_constant_growth$GDP_market_prices_constant_growth_rate<=0]
+
+
+abline(h = 0, col = 'darkblue')
+
+abline(v = c(1958,1966, 1973,1980,2021), col = 'darkred')
+text(1957, -3, "Balance of Payment Crisis - 1958", col = "red3", srt=90)
+text(1965, -2, "BoP Crisis - 1966 (Rupee Devaluation)", col = "red3", srt=90)
+text(1972, -3, "First Oil Crisis - 1973", col = "red3", srt=90)
+text(1979, -2, "Second Oil Shock (Lead to BoP Crisis) - 1980", col = "red3", srt=90)
+text(2020, -3, "COVID 19 Pandemic Crisis - 2021", col = "red3", srt=90)
+
+
+abline(v = c(1992), col = 'black')
+text(1991, -3, "Indian Economic Crisis - 1991-92", col = "red3", srt=90)
+
+abline(v = c(2009), col = 'black')
+text(2008, -3, "Global Financial Crisis - 2008-09", col = "red3", srt=90)
+
 ```
 
