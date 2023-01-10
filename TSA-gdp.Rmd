@@ -1,0 +1,46 @@
+---
+title: "TSA-gdp"
+author: "Uday Khanna"
+date: "2023-01-10"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+	echo = FALSE,
+	message = FALSE,
+	warning = FALSE
+)
+```
+
+## Basic Time Series Analysis
+
+This part is for basic time series analysis on Quarterly GDP data **(source:IMF)**. The dataset used here includes
+
+```{r gdp_data1}
+
+source("gdp_data1.R")
+
+```
+
+There are total 74 rows using `nrow()` formula which means 74 quarters equivalent to around 18 years data. Now to apply times series it is important to convert the data in **TS (Time Series)** format 
+
+```{r ts_gdp_data1_plot}
+
+options(scipen = 100, digits = 4)
+
+ts_gdp_data1 <- with(Nominal_gdp_unadjusted_rs, ts(NGDP_NSA_XDC, start = c(Year[1], Quarter[1]), freq = 4))
+
+ts_plot(ts_gdp_data1,
+        title = "India Quarterly Gross Domestic Product (Nominal - Undjusted) at Domestic Currency",
+        Xtitle = "Period",
+        Ytitle = "Rs in Million",
+        slider = TRUE,
+        color = "Red",
+        width = 3,
+        line.mode = "lines+markers"
+        )
+
+
+```
+

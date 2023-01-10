@@ -14,6 +14,8 @@ navbar:
       menu:
         - text: "GDP and It's Components"
         - href: gdp-components.html
+        - text: "Time Series Analysis - GDP"
+        - href: TSA-gdp.html
 output:
   html_document:
     toc: true
